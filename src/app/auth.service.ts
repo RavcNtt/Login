@@ -11,8 +11,8 @@ export class AuthService {
   
   public permiso = false;
   private admin: UserModel = {
-    userInput:'input01',
-    passInput:'input01'
+    userInput:'test01',
+    passInput:'test01'
   }
 
   isAuth(): boolean{

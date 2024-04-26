@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuario = new UserModel();
-    this.usuario.userInput = 'algo'
+    this.usuario.userInput = 'test01'
   } 
 
   onSubmit(form: NgForm){
