@@ -1,0 +1,39 @@
+<div class="bg-light py-3 py-md-5">
+  <div class="container">
+    <div class="row justify-content-md">
+      <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="bg-white p-4 p-md-5 rounded">
+          <div class="row">
+            <div class="col-12">
+              <div class="mb-5">
+                <h3 class="mb-3">LISTA DE TAREAS</h3>
+                <div class="d-flex">
+                  <p class="fw-bold, mx-4">Tarea: </p>
+                  <input class="form-control" [(ngModel)]="nombreTarea" type="text" placeholder="Ingrese su tarea" aria-label="Ingrese su tarea">
+                  <button type="button" class="btn btn-primary" (click)="guardarTarea()">Agregar</button>
+                </div>
+              </div>
+              <div>
+                <ng-container *ngFor="let tarea of tareas; let i = index"; [class.tachado]="tarea.estado">
+                  <div class="form-check">
+                    <div class="row">
+                      <div class="col-9">
+                        <input class="form-check-input" [(ngModel)]="tarea.estado" (change)="cambiarEstado()" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          {{tarea.nombreTarea}}
+                        </label>
+                      </div>
+                      <div class="col">
+                        <a (click)="deleteTask(i)" class="form-check">&times;</a>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
